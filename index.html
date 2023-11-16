@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
   <link rel="stylesheet" href="src/style.css">
 </head>
+
 <body>
-  <h1>My Weather App</h1>
-  
+  <div class="weather-app">
+    <div class="weather-search">
+      <form>
+        <input type="search" placeholder="Search for a city" required>
+        <button type="submit" class="btn-search">
+          <img src="images/search.svg" alt="icn-search">
+        </button>
+      </form>
+    </div>
+    <div class="weather-current">
+      <div class="weather-current-temperature">
+        <h3>Lisbon</h3>
+        <p>Sunday</p>
+        <h1>23º</h1>
+      </div>
+      <div class="weather-current-img">
+        <img src="images/sun.svg" alt="sun">
+      </div>
+    </div>
+    <div class="weather-forecast">
+      <div class="weather-forecast-individual">
+        <h6>Sunday</h6>
+        <p><strong>23º</strong> | 19ª</p>
+      </div>
+    </div>
+  </div>
 </body>
 <script src="src/index.js"></script>
+
 </html>
