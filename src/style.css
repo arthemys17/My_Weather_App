@@ -86,6 +86,10 @@ input[type="search"]::placeholder {
   font-size: 1.3vw;
 }
 
+#current-month{
+  margin-right:10%;
+}
+
 .weather-current-temperature h1{
   margin: 0 auto;
   font-size: 4vw;
