@@ -3,7 +3,7 @@ let now = new Date();
 
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let currentWeekDay = document.querySelector("#current-week-day");
-currentWeekDay !== null && (currentWeekDay.innerHTML = days[now.getDay()]);
+currentWeekDay !== null && (currentWeekDay.innerHTML = `${days[now.getDay()]},`);
 
 let months = [
   "January",
@@ -40,11 +40,17 @@ function newSearch(event) {
   function changeCity(response) {
     let degrees = Math.round(response.data.temperature.current);
     let changeDegrees = document.querySelector("#current-degree");
-
-    changeDegrees.innerHTML = `${degrees}º`;
-
+    let currentWeatherDescription = document.querySelector("#weather-description");
     let imageCurrentWeather = document.querySelector("#img-current-weather");
+    let currentHumidity = document.querySelector("#humidity");
+    let currentWindSpeed = document.querySelector("#wind-speed");
+
+    currentWeatherDescription.innerHTML = response.data.condition.description;
+    changeDegrees.innerHTML = `${degrees}º`;
     imageCurrentWeather.innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}" class="current-img">`;
+    currentHumidity.innerHTML = `${response.data.temperature.humidity}%`;
+    currentWindSpeed.innerHTML = `${response.data.wind.speed}km/h`;
+
 
     let formattedString = valueInputInString.match(onlyLetters);
 
