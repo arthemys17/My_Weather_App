@@ -18,7 +18,7 @@ body {
   width: 45%;
 }
 
-input[type="search"] {
+#input-search-form {
   background-color: transparent;
   border-style: none;
   color: white;
@@ -27,16 +27,18 @@ input[type="search"] {
   width: 100%;
 }
 
-input:focus {
+#input-search-form:focus {
+  background-color: rgb(21, 87, 113);
+  border-radius: 15px 0 0 15px;
   outline: none;
 }
 
-input::-webkit-search-cancel-button {
-  appearance: none;
+#input-search-form::placeholder {
+  color: rgba(255, 255, 255, 0.6);
 }
 
-input[type="search"]::placeholder {
-  color: rgba(255, 255, 255, 0.6);
+#input-search-form::-webkit-search-cancel-button {
+ filter: brightness(0) invert(1);
 }
 
 .search-form {
@@ -46,54 +48,48 @@ input[type="search"]::placeholder {
   width: 100%;
 }
 
-.search-form:focus {
-  border-radius: 15px;
-}
-
 .btn-search {
   background-color: rgba(255, 255, 255, 0.6);
-  border-radius: 5px 15px 15px 5px;
+  border-radius: 0px 15px 15px 0px;
   border-style: none;
   cursor: pointer;
   width: 7%;
 }
 
-.icn-search{
-  margin:0 auto;
+.icn-search {
+  margin: 0 auto;
   width: 75%;
 }
 
 .weather-current {
   color: white;
   justify-content: space-between;
-  margin-top:3%;
+  margin-top: 3%;
 }
 
 .weather-current-temperature {
   padding-left: 10%;
   justify-content: space-between;
+  width: 50%;
 }
 
 .weather-current-temperature h3 {
   margin: 0 auto;
-  padding-top: 20%;
-  font-size: 2vw;
+  padding-top: 5%;
+  font-size: 2.4vw;
 }
 
-.weather-current-temperature p{
-  margin: 0 auto;
-  padding-top: -5%;
+.weather-current-temperature p {
+  margin-top: -2%;
+  padding-right: 3%;
   font-size: 1.3vw;
 }
 
-#current-month{
-  margin-right:10%;
-}
-
-.weather-current-temperature h1{
+.weather-current-temperature h1 {
   margin: 0 auto;
-  font-size: 4vw;
-  padding-top: 23%;
+  font-size: 4.5vw;
+  font-weight: 400;
+  padding-top: 5%;
 }
 
 .weather-current-img {
