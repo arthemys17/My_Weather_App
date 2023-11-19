@@ -19,7 +19,7 @@
       <form class="search-form flex" id="search-form" autocomplete="off">
         <input id="input-search-form" type="search" placeholder="Search for a city" required>
         <button type="submit" class="btn-search" id="search-submit-button">
-          <img src="images/search.svg" alt="search" class="icn-search flex center">
+          <img src="images/search.svg" alt="search" class="icn-search flex center" id="current-icn">
         </button>
       </form>
     </div>
@@ -31,15 +31,19 @@
           <p id="current-day">17</p>
         </div>
         <p id="current-week-day">Sunday</p>
-        <h1 id="current-degree">23º</h1>
       </div>
-      <div class="weather-current-img flex center">
-        <img src="images/sun.svg" alt="sun">
+      <div class="weather-current-img" id="img-current-weather">
+        <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" alt="rain-day" class="current-img">
+      </div>
+      <div class="weather-temperature-today">
+        <h1 id="current-degree">23º</h1>
       </div>
     </div>
   </div>
   <footer class="flex center">
-    <p class="footer-project">This project was coded by <a href="https://github.com/arthemys17">Raquel Canhoto</a> is open-soursed on <a href="https://github.com/arthemys17/My_Weather_App">Github</a> and hosted on <a href="https://weather-app-rc-shecodes.netlify.app/">Netlify</a>.</p>
+    <p class="footer-project">This project was coded by <a href="https://github.com/arthemys17">Raquel Canhoto</a> is
+      open-soursed on <a href="https://github.com/arthemys17/My_Weather_App">Github</a> and hosted on <a
+        href="https://weather-app-rc-shecodes.netlify.app/">Netlify</a>.</p>
   </footer>
 </body>
 <script src="src/index.js"></script>

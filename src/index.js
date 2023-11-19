@@ -43,6 +43,9 @@ function newSearch(event) {
 
     changeDegrees.innerHTML = `${degrees}º`;
 
+    let imageCurrentWeather = document.querySelector("#img-current-weather");
+    imageCurrentWeather.innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}" class="current-img">`;
+
     let formattedString = valueInputInString.match(onlyLetters);
 
     if (formattedString != null && valueInputInString != "") {
