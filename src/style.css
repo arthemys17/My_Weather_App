@@ -1,6 +1,8 @@
 body {
   font-family: "Istok Web", sans-serif;
   padding: 2em;
+  margin:0 auto;
+  width: 45%;
 }
 
 .flex {
@@ -15,7 +17,6 @@ body {
   background-color: rgba(1, 24, 38);
   border-radius: 15px;
   padding: 3em;
-  width: 45%;
 }
 
 #input-search-form {
@@ -101,4 +102,15 @@ body {
 .weather-forecast {
   background-color: rgba(16, 68, 88);
   color: white;
+}
+
+.footer-project{
+  font-size: 0.8vw;
+  margin:0 auto;
+  padding-top:1%;
+}
+
+.footer-project a{
+  color: rgba(16, 68, 88);
+  font-weight: 600;
 }
