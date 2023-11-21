@@ -1,8 +1,8 @@
 body {
   font-family: "Istok Web", sans-serif;
   padding: 2em;
-  margin:0 auto;
-  width: 45%;
+  margin: 0 auto;
+  width: 50%;
 }
 
 .flex {
@@ -38,12 +38,12 @@ body {
   color: rgb(241, 247, 137, 0.9);
 }
 
-#input-search-form:focus::placeholder{
-  color:rgb(241, 247, 137,0.2);
+#input-search-form:focus::placeholder {
+  color: rgb(241, 247, 137, 0.2);
 }
 
 #input-search-form::-webkit-search-cancel-button {
- filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .search-form {
@@ -69,7 +69,7 @@ body {
 .weather-current {
   color: white;
   margin-top: 3%;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   padding: 0 3%;
 }
 
@@ -90,19 +90,21 @@ body {
   font-size: 1.3vw;
 }
 
-#weather-description{
-  margin-top:-8%;
+#weather-description {
+  margin-top: -8%;
   font-size: 1.1vw;
 }
 
 .weather-temperature-today h1 {
-  margin:0 auto;
+  margin: 0 auto;
   font-size: 6vw;
   font-weight: 400;
   padding-top: 5%;
+  min-width: 8vw;
+  text-align: center;
 }
 
-.weather-current-img{
+.weather-current-img {
   height: auto;
   width: 40%;
   align-self: end;
@@ -115,31 +117,67 @@ body {
   max-width: 90%;
 }
 
-.weather-current-informations{
+.weather-current-informations {
   background-color: rgb(21, 87, 113);
   border-radius: 15px;
-  color:white;
+  color: white;
   justify-content: space-around;
+  font-size: 1.1vw;
 }
 
-.current-humidity, .current-wind-speed{
+.current-humidity,
+.current-wind-speed {
   display: grid;
   grid-auto-flow: column;
   grid-column-gap: 10px;
   width: 50%;
 }
 
-#humidity, #wind-speed, #weather-description{
+#humidity,
+#wind-speed,
+#weather-description {
   color: rgb(241, 247, 137);
 }
 
-.footer-project{
+.footer-project {
   font-size: 0.8vw;
-  margin:0 auto;
-  padding-top:1%;
+  margin: 0 auto;
+  padding-top: 1%;
 }
 
-.footer-project a{
+.footer-project a {
   color: rgba(16, 68, 88);
   font-weight: 600;
+}
+
+.weather-forecast {
+  background-color: rgb(21, 87, 113);
+  border-radius: 15px;
+  color: white;
+  padding: 2%;
+  margin-top: 5%;
+  display: grid;
+  grid-auto-flow: column;
+  grid-column-gap: 4%;
+  text-align: center;
+}
+
+.weather-forecast-day {
+  background-color: aliceblue;
+  border-radius: 8%;
+  color: black;
+}
+
+.forecast-icn{
+  margin: 0 auto;
+  height: auto;
+  width: 60%;
+}
+
+.forecast-icn img{
+  width: 100%;
+}
+
+.forecast-date{
+  margin:4% 8%;
 }
