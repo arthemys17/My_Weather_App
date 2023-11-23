@@ -118,7 +118,7 @@ body {
 }
 
 .weather-current-informations {
-  background-color: rgb(21, 87, 113);
+  background-color: rgba(16, 68, 88);
   border-radius: 15px;
   color: white;
   justify-content: space-around;
@@ -151,7 +151,6 @@ body {
 }
 
 .weather-forecast {
-  background-color: rgb(21, 87, 113);
   border-radius: 15px;
   color: white;
   padding: 2%;
@@ -160,12 +159,18 @@ body {
   grid-auto-flow: column;
   grid-column-gap: 4%;
   text-align: center;
+  background-color: rgba(16, 68, 88);
 }
 
 .weather-forecast-day {
-  background-color: aliceblue;
   border-radius: 8%;
-  color: black;
+  color: white;
+}
+
+.weather-forecast-day:hover{
+  box-shadow: 8px 11px 16px -10px rgba(0,0,0,0.3);
+  background-color: rgb(21, 87, 113);
+
 }
 
 .forecast-icn{

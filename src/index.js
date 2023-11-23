@@ -77,3 +77,36 @@ function newSearch(event) {
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", newSearch);
+
+
+//inject html from javascript
+function displayForecast(){
+
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHTML = "";
+
+  days.forEach(function (day){
+    forecastHTML = forecastHTML + 
+    `<div class="weather-forecast-day">
+    <div class="weather-forecast-date">
+    <p class="forecast-date">${day}</p>
+    </div>
+    <div class="forecast-icn">
+    <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png" alt="clear-sky-day">
+    </div>
+    <div class="forecast-temperatures">
+    <span class="forecast-temperatures-max">
+    18ª
+    </span>
+    <span class="forecast-temperatures-min">
+    12ª
+    </span>
+    </div>
+    </div>`
+  })
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHTML;
+}
+
+displayForecast();
