@@ -69,13 +69,13 @@ body {
 .weather-current {
   color: white;
   margin-top: 3%;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0 3%;
 }
 
 .weather-current-temperature {
   padding-left: 1%;
-  min-width: 45%;
+  width: 50%;
 }
 
 .weather-current-temperature h3 {
@@ -104,17 +104,15 @@ body {
   text-align: center;
 }
 
-.weather-current-img {
-  height: auto;
-  width: 40%;
-  align-self: end;
-}
+#img-current-weather{
+  align-items:flex-end;
+} 
 
 .current-img {
   display: block;
-  margin-left: auto;
+  margin-left:auto;
   height: auto;
-  max-width: 90%;
+  width: 95%;
 }
 
 .weather-current-informations {
@@ -180,9 +178,14 @@ body {
 }
 
 .forecast-icn img{
-  width: 100%;
+  width: 90%;
 }
 
 .forecast-date{
   margin:4% 8%;
+}
+
+.forecast-temperatures-max{
+  color: rgb(241, 247, 137);
+  font-size: 1.1vw;
 }
