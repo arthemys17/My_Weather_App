@@ -1,3 +1,63 @@
+//update all the weather infos with the API
+function updateWeather(response){
+  console.log(response.data);
+  let changeDegrees = document.querySelector("#current-degree");
+  let degrees = Math.round(response.data.temperature.current);
+  let cityElement = document.querySelector("#city");
+  let currentWeatherDescription = document.querySelector("#weather-description");
+  let imageCurrentWeather = document.querySelector("#img-current-weather");
+  let currentHumidity = document.querySelector("#humidity");
+  let currentWindSpeed = document.querySelector("#wind-speed");
+  
+  imageCurrentWeather.innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}" class="current-img">`;
+  currentHumidity.innerHTML = `${response.data.temperature.humidity}%`;
+  currentWindSpeed.innerHTML = `${response.data.wind.speed}km/h`;
+  changeDegrees.innerHTML = `${degrees}º`;
+  cityElement.innerHTML = response.data.city;
+  currentWeatherDescription.innerHTML = response.data.condition.description;
+}
+
+//search for a city in the API
+function searchCity(city){
+  let apiKey = "0t54a8o1afb5bf5b4dd0813b70dd9503";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  
+  axios.get(apiURL).then(updateWeather);
+}
+
+//search form
+function handleSearchSubmit(event) {
+  event.preventDefault();
+  
+  let searchInput = document.querySelector("#input-search-form");
+  
+  /*let onlyLetters = /([a-zA-Z]+[\s]*)/i;
+  let formattedString = searchInput.value.match(onlyLetters);
+  
+  if (formattedString != null && searchInput.value != "") {
+    if (searchInput.value.length == formattedString[0].length) {
+  
+      if (searchInput === null || cityElement === null) {
+        return;
+      }
+  
+      cityElement.innerHTML = searchInput.value;
+      return;
+    }
+  }*/
+
+  searchCity(searchInput.value);
+  searchInput.value = null;
+}
+
+let searchFormElement = document.querySelector("#search-form");
+searchFormElement.addEventListener("submit", handleSearchSubmit);
+
+searchCity("Lisbon");
+
+
+
+/*
 //Update the date
 let now = new Date();
 
@@ -27,52 +87,13 @@ let currentDay = document.querySelector("#current-day");
 currentDay !== null && (currentDay.innerHTML = now.getDate());
 
 //Search engine
-let apiKey = "0t54a8o1afb5bf5b4dd0813b70dd9503";
 
 function newSearch(event) {
   event.preventDefault();
 
   let searchInput = document.querySelector("#input-search-form");
   let valueInputInString = `${searchInput.value}`;
-  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${valueInputInString}&key=${apiKey}&units=metric`;
-  let onlyLetters = /([a-zA-Z]+[\s]*)*/i;
-
-  function changeCity(response) {
-    let degrees = Math.round(response.data.temperature.current);
-    let changeDegrees = document.querySelector("#current-degree");
-    let currentWeatherDescription = document.querySelector("#weather-description");
-    let imageCurrentWeather = document.querySelector("#img-current-weather");
-    let currentHumidity = document.querySelector("#humidity");
-    let currentWindSpeed = document.querySelector("#wind-speed");
-
-    currentWeatherDescription.innerHTML = response.data.condition.description;
-    changeDegrees.innerHTML = `${degrees}º`;
-    imageCurrentWeather.innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}" class="current-img">`;
-    currentHumidity.innerHTML = `${response.data.temperature.humidity}%`;
-    currentWindSpeed.innerHTML = `${response.data.wind.speed}km/h`;
-
-
-    let formattedString = valueInputInString.match(onlyLetters);
-
-    if (formattedString != null && valueInputInString != "") {
-      if (valueInputInString.length == formattedString[0].length) {
-        let city = document.querySelector("#city");
-
-        if (searchInput === null || city === null) {
-          return;
-        }
-
-        city.innerHTML = valueInputInString;
-        return;
-      }
-    }
-  }
-  axios
-    .get(apiURL)
-    .then(changeCity)
-    .catch(() => alert("Please, search only for the city name!"));
-
-  searchInput.value = null;
+/*
 }
 
 let form = document.querySelector("#search-form");
@@ -109,4 +130,4 @@ function displayForecast(){
   forecastElement.innerHTML = forecastHTML;
 }
 
-displayForecast();
+displayForecast();*/
