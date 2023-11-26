@@ -8,13 +8,49 @@ function updateWeather(response){
   let imageCurrentWeather = document.querySelector("#img-current-weather");
   let currentHumidity = document.querySelector("#humidity");
   let currentWindSpeed = document.querySelector("#wind-speed");
+  let date = new Date (response.data.time * 1000);
+  let weekDayElement = document.querySelector("#current-week-day");
+  let monthElement = document.querySelector("#current-month");
+  let dayElement = document.querySelector ("#current-day");
   
+  dayElement.innerHTML = date.getDate();
+  monthElement.innerHTML = formatMonth(date);
+  weekDayElement.innerHTML = formatWeekDay(date);
   imageCurrentWeather.innerHTML = `<img src="${response.data.condition.icon_url}" alt="${response.data.condition.icon}" class="current-img">`;
   currentHumidity.innerHTML = `${response.data.temperature.humidity}%`;
-  currentWindSpeed.innerHTML = `${response.data.wind.speed}km/h`;
+  currentWindSpeed.innerHTML = `${response.data.wind.speed} km/h`;
   changeDegrees.innerHTML = `${degrees}º`;
   cityElement.innerHTML = response.data.city;
   currentWeatherDescription.innerHTML = response.data.condition.description;
+}
+
+//format date with API
+function formatWeekDay(date){
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let weekDay = days[date.getDay()];
+
+  return `${weekDay},`;
+}
+
+function formatMonth(date){
+  let months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  let currentMonth = months[date.getMonth()];
+
+  return currentMonth;
+
 }
 
 //search for a city in the API
@@ -61,24 +97,8 @@ searchCity("Lisbon");
 //Update the date
 let now = new Date();
 
-let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-let currentWeekDay = document.querySelector("#current-week-day");
 currentWeekDay !== null && (currentWeekDay.innerHTML = `${days[now.getDay()]},`);
 
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
 
 let currentMonth = document.querySelector("#current-month");
 currentMonth !== null && (currentMonth.innerHTML = months[now.getMonth()]);
